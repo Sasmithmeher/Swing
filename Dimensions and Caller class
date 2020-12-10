@@ -1,0 +1,478 @@
+//Main Class
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+class Dimension {
+    public static void main(String[] args) {
+        SQUARE S = new SQUARE();
+        RECTANGLE R = new RECTANGLE();
+        TRIANGLE T = new TRIANGLE();
+        CIRCLE C = new CIRCLE();
+        ELLIPSE E = new ELLIPSE();
+        TRAPEZOID Ta = new TRAPEZOID();
+    }
+}
+
+class SQUARE extends JFrame {
+    JTextField t1;
+    JButton b1,b2,b3,b4;
+    JLabel l1;
+
+    public SQUARE() {
+        t1 = new JTextField(10);
+        b1 = new JButton("Area");
+        b2 = new JButton("Perimeter");
+        b3 = new JButton("Volume");
+        l1 = new JLabel("Result");
+        b4 = new JButton("Close");
+
+        add(t1);
+        add(b1);
+        add(b2);
+        add(b3);
+        add(l1);
+        add(b4);
+
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t1.getText());
+                String value = num1 * num1 + " cm/s";
+                l1.setText(value + "");
+            }
+        });
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t1.getText());
+                String value = 4 * num1 + " cm";
+                l1.setText(value + "");
+            }
+        });
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t1.getText());
+                String value = num1 * num1 * num1 + " cc";
+                l1.setText(value + "");
+            }
+        });
+
+        setLayout(new GridLayout(3,4));
+        setVisible(true);
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Dimensions of Square");
+    }
+}
+
+class RECTANGLE extends JFrame{
+    JTextField t1,t2,t3,t4,t6,t7,t8;
+    JButton b1,b2,b3;
+    JLabel l1;
+    public RECTANGLE(){
+        t1 = new JTextField(10);
+        t2 = new JTextField(10);
+        t3 = new JTextField(10);
+        t4 = new JTextField(10);
+        t6 = new JTextField(10);
+        t7 = new JTextField(10);
+        t8 = new JTextField(10);
+        b1 = new JButton("Area");
+        b2 = new JButton("Perimeter");
+        b3 = new JButton("Volume");
+        l1 = new JLabel("Result");
+
+        add(t6);
+        add(t7);
+        add(t8);
+        add(b3);
+        add(t3);
+        add(t4);
+        add(b2);
+        add(l1);
+        add(t1);
+        add(t2);
+        add(b1);
+
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t1.getText());
+                double num2 = Integer.parseInt(t2.getText());
+                String value = (num1 * num2)+ " cm/s";
+                l1.setText(value);
+            }
+        });
+
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t3.getText());
+                double num2 = Integer.parseInt(t4.getText());
+                String value = (num1 + num2) * 2 + " cm";
+                l1.setText(value);
+            }
+        });
+
+        b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t6.getText());
+                double num2 = Integer.parseInt(t7.getText());
+                double num3 = Integer.parseInt(t8.getText());
+                String value = (num1 * num2 * num3) + " cc";
+                l1.setText(value);
+            }
+        });
+
+        setLayout(new GridLayout(3,4));
+        setVisible(true);
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Dimensions of Rectangle");
+    }
+}
+
+class TRIANGLE extends JFrame{
+    JTextField t1,t2,t3,t4,t5,t6,t7,t8;
+    JButton b1,b2,b3;
+    JLabel l1;
+    public TRIANGLE(){
+        t1 = new JTextField(10);
+        t2 = new JTextField(10);
+        t3 = new JTextField(10);
+        t4 = new JTextField(10);
+        t5 = new JTextField(10);
+        t6 = new JTextField(10);
+        t7 = new JTextField(10);
+        t8 = new JTextField(10);
+        b1 = new JButton("Area");
+        b2 = new JButton("Perimeter");
+        b3 = new JButton("Volume");
+        l1 = new JLabel("Result");
+
+        add(t6);
+        add(t7);
+        add(t8);
+        add(b3);
+        add(t3);
+        add(t4);
+        add(t5);
+        add(b2);
+        add(t1);
+        add(t2);
+        add(b1);
+        add(l1);
+
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t1.getText());
+                double num2 = Integer.parseInt(t2.getText());
+                String value = (num1 * num2) / 2+ " cm/s";
+                l1.setText(value);
+            }
+        });
+
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t3.getText());
+                double num2 = Integer.parseInt(t4.getText());
+                double num3 = Integer.parseInt(t5.getText());
+                String value = (num1 + num2 + num3) + " cm";
+                l1.setText(value);
+            }
+        });
+
+        b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t6.getText());
+                double num2 = Integer.parseInt(t7.getText());
+                double num3 = Integer.parseInt(t8.getText());
+                String value = (num1 * num2 * num3) / 2 + " cc";
+                l1.setText(value);
+            }
+        });
+
+        setLayout(new GridLayout(3,4));
+        setVisible(true);
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Dimensions of Triangle");
+
+    }
+}
+
+class CIRCLE extends JFrame {
+    JTextField t1;
+    JButton b1,b2,b3;
+    JLabel l1;
+
+    public CIRCLE() {
+        t1 = new JTextField(10);
+        b1 = new JButton("Area");
+        b2 = new JButton("Circumference");
+        b3 = new JButton("Volume");
+        l1 = new JLabel("Result");
+
+        add(t1);
+        add(b1);
+        add(b2);
+        add(b3);
+        add(l1);
+        b1.addActionListener(e -> {
+            double num1 = Integer.parseInt(t1.getText());
+            String value1 = (Math.pow(num1,2))*Math.PI+ " cm/s";
+            l1.setText(value1);
+        });
+        b2.addActionListener(e -> {
+            double num1 = Integer.parseInt(t1.getText());
+            String value1 = 2* num1 *Math.PI+ " cm";
+            l1.setText(value1);
+        });
+        b3.addActionListener(e -> {
+            double num1 = Integer.parseInt(t1.getText());
+            String value1 = 1.333 * Math.PI * Math.pow(num1,3)+ " cc";
+            l1.setText(value1);
+        });
+
+        setLayout(new GridLayout(4,1));
+        setVisible(true);
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Dimensions of Circle");
+    }
+}
+
+class ELLIPSE extends JFrame {
+    JTextField t1,t2,t3,t4,t6,t7,t8;
+    JButton b1,b2,b3;
+    JLabel l1;
+
+    public ELLIPSE() {
+        t1 = new JTextField(10);
+        t2 = new JTextField(10);
+        t3 = new JTextField(10);
+        t4 = new JTextField(10);
+        t6 = new JTextField(10);
+        t7 = new JTextField(10);
+        t8 = new JTextField(10);
+        b1 = new JButton("Area");
+        b2 = new JButton("Perimeter");
+        b3 = new JButton("Volume");
+        l1 = new JLabel("Result");
+
+        add(t6);
+        add(t7);
+        add(t8);
+        add(b3);
+        add(t3);
+        add(t4);
+        add(b2);
+        add(l1);
+        add(t1);
+        add(t2);
+        add(b1);
+
+
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t1.getText());
+                double num2 = Integer.parseInt(t2.getText());
+                String value = (num1 * num2) * Math.PI + " cm/s";
+                l1.setText(value);
+            }
+        });
+
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t3.getText());
+                double num2 = Integer.parseInt(t4.getText());
+                String value = 2*Math.PI*(Math.sqrt(((Math.pow(num1,2))+(Math.pow(num2,2)))/2)) + " cm";
+                l1.setText(value);
+                l1.setText(value);
+            }
+        });
+
+        b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t6.getText());
+                double num2 = Integer.parseInt(t7.getText());
+                double num3 = Integer.parseInt(t8.getText());
+                String value = (num1 * num2 * num3) * (1.3333) * Math.PI + " cc";
+                l1.setText(value);
+            }
+        });
+
+        setLayout(new GridLayout(3,4));
+        setVisible(true);
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Dimensions of Ellipse");
+    }
+}
+
+class TRAPEZOID extends JFrame{
+    JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11;
+    JButton b1,b2,b3;
+    JLabel l1;
+    public TRAPEZOID(){
+        t1 = new JTextField(10);
+        t2 = new JTextField(10);
+        t3 = new JTextField(10);
+        t4 = new JTextField(10);
+        t5 = new JTextField(10);
+        t6 = new JTextField(10);
+        t7 = new JTextField(10);
+        t8 = new JTextField(10);
+        t9 = new JTextField(10);
+        t10 = new JTextField(10);
+        t11 = new JTextField(10);
+        b1 = new JButton("Area");
+        b2 = new JButton("Perimeter");
+        b3 = new JButton("Volume");
+        l1 = new JLabel("Result");
+
+        add(t8);
+        add(t9);
+        add(t10);
+        add(t11);
+        add(b3);
+        add(t4);
+        add(t5);
+        add(t6);
+        add(t7);
+        add(b2);
+        add(t3);
+        add(t2);
+        add(t1);
+        add(b1);
+        add(l1);
+
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t3.getText());
+                double num2 = Integer.parseInt(t2.getText());
+                double num3 = Integer.parseInt(t1.getText());
+                String value = ((num1 + num2) * num3) / 2 + " cm/s";
+                l1.setText(value);
+            }
+        });
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t4.getText());
+                double num2 = Integer.parseInt(t5.getText());
+                double num3 = Integer.parseInt(t6.getText());
+                double num4 = Integer.parseInt(t7.getText());
+                String value = (num1 + num2 + num3 + num4) + " cm";
+                l1.setText(value);
+            }
+        });
+        b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Integer.parseInt(t8.getText());
+                double num2 = Integer.parseInt(t9.getText());
+                double num3 = Integer.parseInt(t10.getText());
+                double num4 = Integer.parseInt(t11.getText());
+                String value = (num1 * num4)*(num3 + num2) + " cc";
+                l1.setText(value);
+            }
+        });
+
+        setLayout(new GridLayout(3,4));
+        setVisible(true);
+        setSize(400, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Dimensions of Trapezium");
+    }
+}
+
+//Caller class
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class DimensionCaller {
+    public static void main(String[] args) {
+        Shapes obj = new Shapes();
+    }
+}
+class Shapes extends JFrame{
+    public Shapes(){
+        JButton b1 = new JButton("SQUARE");
+        b1.setBackground(Color.WHITE);
+        b1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new SQUARE();
+                dispose();
+            }
+        });
+        JButton b2 = new JButton("RECTANGLE");
+        b2.setBackground(Color.WHITE);
+        b2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new RECTANGLE();
+                dispose();
+            }
+        });
+        JButton b3 = new JButton("TRIANGLE");
+        b3.setBackground(Color.WHITE);
+        b3.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new TRIANGLE();
+                dispose();
+            }
+        });
+        JButton b4 = new JButton("CIRCLE");
+        b4.setBackground(Color.WHITE);
+        b4.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new CIRCLE();
+                dispose();
+            }
+        });
+        JButton b5 = new JButton("ECLIPSE");
+        b5.setBackground(Color.WHITE);
+        b5.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new ELLIPSE();
+                dispose();
+            }
+        });
+        JButton b6 = new JButton("TRAPEZOID");
+        b6.setBackground(Color.WHITE);
+        b6.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        b6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new TRAPEZOID();
+                dispose();
+            }
+        });
+        ImageIcon i = new ImageIcon("shp.jpg");
+        add(b1);
+        add(b2);
+        add(b3);
+        add(b4);
+        add(b5);
+        add(b6);
+        setIconImage(i.getImage());
+        setLayout(new GridLayout(2,3));
+        setVisible(true);
+        setSize(400,200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Select Your Shape ");
+    }
+}
